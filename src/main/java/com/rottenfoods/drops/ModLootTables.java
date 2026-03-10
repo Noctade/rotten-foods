@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
+import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.AlternativeEntry;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.condition.TableBonusLootCondition;
@@ -46,12 +47,9 @@ public class ModLootTables {
             if (key.getValue().equals(Identifier.of("minecraft", "blocks/carrots"))) {
 
                 LootPool.Builder pool = LootPool.builder()
-                        .with(
-                                AlternativeEntry.builder(
-                                        ItemEntry.builder(ModItems.ROTTEN_CARROT).weight(1),
-                                        ItemEntry.builder(Items.CARROT).weight(19)
-                                )
-                        );
+                        .conditionally(RandomChanceLootCondition.builder(0.1f))
+                        .with(ItemEntry.builder(ModItems.ROTTEN_CARROT))
+                        .rolls(ConstantLootNumberProvider.create(1));
 
                 tableBuilder.pool(pool);
             }
