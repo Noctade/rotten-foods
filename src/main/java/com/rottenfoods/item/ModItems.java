@@ -59,8 +59,8 @@ public class ModItems {
                 public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
                     ItemStack result = super.finishUsing(stack, world, user);
                     if (!world.isClient()) {
-                        user.addStatusEffect(new StatusEffectInstance(StatusEffects.HUNGER, 250, 1));
-                        user.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 60, 1));
+                        user.addStatusEffect(new StatusEffectInstance(StatusEffects.HUNGER, 240, 2));
+                        user.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 75, 1));
                     }
                     return result;
                 }
