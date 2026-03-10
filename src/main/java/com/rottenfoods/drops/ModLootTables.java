@@ -53,13 +53,6 @@ public class ModLootTables {
 
                 tableBuilder.pool(pool);
             }
-
-            if (key.getValue().equals(Identifier.of("minecraft", "chests/stronghold_corridor"))) {
-                LootPool.Builder pool = LootPool.builder()
-                        .with(ItemEntry.builder(ModItems.ROTTEN_CARROT).weight(5))
-                        .rolls(ConstantLootNumberProvider.create(1));
-                tableBuilder.pool(pool);
-            }
         });
     }
 }
