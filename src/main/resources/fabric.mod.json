@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "rotten-foods",
+	"version": "${version}",
+	"name": "Rotten Foods",
+	"description": "Adds custom variants of rotten / poisonous foods (Apples, ...)",
+	"authors": [
+		"Noctade"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/rotten-foods/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.rottenfoods.Rottenfoods"
+		],
+		"client": [
+			"com.rottenfoods.RottenfoodsClient"
+		],
+		"fabric-datagen": [
+			"com.rottenfoods.RottenfoodsDataGenerator"
+		]
+	},
+	"mixins": [
+		"rotten-foods.mixins.json",
+		{
+			"config": "rotten-foods.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
