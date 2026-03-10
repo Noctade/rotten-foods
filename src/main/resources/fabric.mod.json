@@ -3,13 +3,13 @@
 	"id": "rotten-foods",
 	"version": "${version}",
 	"name": "Rotten Foods",
-	"description": "Adds custom variants of rotten / poisonous foods (Apples, ...)",
+	"description": "Adds custom variants of rotten / poisonous foods (Apples, Carrots, ...)",
 	"authors": [
 		"Noctade"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/Noctade/rotten-foods"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/rotten-foods/icon.png",

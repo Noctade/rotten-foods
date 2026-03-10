@@ -21,8 +21,9 @@ public class Rottenfoods implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Rotten Foods loading!");
 		ModItems.registerModItems();
 		ModLootTables.modifyLootTables();
+		LOGGER.info("Rotten Foods loaded!");
 	}
 }
