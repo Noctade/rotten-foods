@@ -68,6 +68,8 @@ public class ModItems {
             new Item.Settings()
     );
 
+    public static final Item ROTTEN_WHEAT = registerItem("rotten_wheat", Item::new, new Item.Settings());
+
     public static Item registerItem(String name, Function<Item.Settings, Item> factory, Item.Settings settings) {
         final RegistryKey<Item> registerKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Rottenfoods.MOD_ID, name));
         return Items.register(registerKey, factory, settings);
@@ -76,6 +78,7 @@ public class ModItems {
     private static void customIngredients(FabricItemGroupEntries entries) {
         entries.add(ROTTEN_APPLE);
         entries.add(ROTTEN_CARROT);
+        entries.add(ROTTEN_WHEAT);
     }
 
     public static void registerModItems() {

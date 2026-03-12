@@ -53,6 +53,16 @@ public class ModLootTables {
 
                 tableBuilder.pool(pool);
             }
+
+            if (key.getValue().equals(Identifier.of("minecraft", "blocks/wheat"))) {
+
+                LootPool.Builder pool = LootPool.builder()
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(ModItems.ROTTEN_WHEAT))
+                        .rolls(ConstantLootNumberProvider.create(1));
+
+                tableBuilder.pool(pool);
+            }
         });
     }
 }
