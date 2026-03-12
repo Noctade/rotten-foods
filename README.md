@@ -3,7 +3,7 @@ A small Minecraft 1.21.11 Fabric mod that adds rotten variants of food items (i.
 
 ### Changes (planned and completed):
 - [x] Rotten Apple
-- [ ] Rotten Wheat
+- [x] Rotten Wheat
 - [x] Rotten Carrot
 - [ ] Rotten Watermelon
 - [ ] Rotten Meat Variants
