@@ -3,6 +3,7 @@ package com.rottenfoods.item;
 import com.rottenfoods.Rottenfoods;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.impl.object.builder.FabricEntityTypeImpl;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -39,6 +40,29 @@ public class ModItems {
                     if (!world.isClient()) {
                         user.addStatusEffect(new StatusEffectInstance(StatusEffects.HUNGER, 200, 2));
                         user.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 160, 1));
+                    }
+                    return result;
+                }
+            },
+            new Item.Settings()
+    );
+
+    public static final Item ROTTEN_GOLDEN_APPLE = registerItem(
+            "rotten_golden_apple",
+            settings -> new Item(settings.food(
+                    new FoodComponent.Builder()
+                            .nutrition(4)
+                            .saturationModifier(4.8f)
+                            .alwaysEdible().build()
+            )) {
+                @Override
+                public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
+                    ItemStack result = super.finishUsing(stack, world, user);
+                    if (!world.isClient()) {
+                        user.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 1200, 1));
+                        user.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 75, 2));
+                        user.addStatusEffect(new StatusEffectInstance(StatusEffects.HUNGER, 150, 2));
+                        user.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 60, 1));
                     }
                     return result;
                 }
